@@ -22,7 +22,8 @@ setInterval(() => {
 
     app.render(
         <React.StrictMode>
-            <Home counter={counter} /> 
+             {/* Cambia "asc" a "desc" si quieres que muestre cuenta regresiva */}
+            <Home counter={counter} mode="desc" /> 
             {/* Renderiza el componente Home, pasando el valor actual del contador como propiedad. */}
         </React.StrictMode>,
     );

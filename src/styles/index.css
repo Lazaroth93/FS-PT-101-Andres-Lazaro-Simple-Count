@@ -1,11 +1,84 @@
-/* 
+@keyframes pulse {
+  0% {opacity: 1;}
+  50% {opacity: 0.6;}
+  100% {opacity: 1;}
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+/* Contador grande y responsive */
+.cells-content {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  user-select: none;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width: 400px) {
+  .cells-content {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+}
 
-*/
+/* Feedback visual para botones */
+button.btn {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+button.btn:hover {
+  filter: brightness(90%);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+button.btn:active {
+  filter: brightness(80%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+button.btn:focus {
+  outline: 3px solid #3333ff;
+  outline-offset: 2px;
+}
+
+/* Temas */
+.dark-theme {
+  background-color: #121212;
+  color: #eee;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.light-theme {
+  background-color: #fff;
+  color: #222;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor contador */
+.contador-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: #f7f9ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.light-theme .contador-container {
+  background: #e9ecef; /* gris suave */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.dark-theme .contador-container {
+  background: #222437;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.7);
+}
+
+/* Mostrar spinners en input number */
+input[type=number] {
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: inner-spin-button !important;
+  display: inline-block !important;
+}
